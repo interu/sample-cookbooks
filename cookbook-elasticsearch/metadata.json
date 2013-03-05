@@ -1,0 +1,30 @@
+{
+  "name": "elasticsearch",
+  "description": "Installs elasticsearch",
+  "long_description": "= DESCRIPTION:\n\nInstalls and configures ElasticSearch.\n\n= REQUIREMENTS:\n\n== Platform:\n\nFor RedHat / CEntOS only\n\n==Cookbooks:\n\nRequires Opscode's java cookbooks.  \n\n= ATTRIBUTES:\n\nIt's a good idea to change the cluster_name attribute to something \nmeaningful, like \"production\".\n\nProduction deployments should also increase the heap_size and fd_ulimit \nattributes.\n\n= USAGE:\n\nDirectory defaults:\n\ndefault[:elasticsearch][:dir][:home]    = \"/usr/lib/elasticsearch\" \ndefault[:elasticsearch][:dir][:conf]    = \"/etc/elasticsearch\"\ndefault[:elasticsearch][:dir][:lib]     = \"/var/lib/elasticsearch\"\ndefault[:elasticsearch][:dir][:logs]    = \"/var/log/elasticsearch\"\ndefault[:elasticsearch][:dir][:run]     = \"/var/run/elasticsearch\"\ndefault[:elasticsearch][:dir][:data]    = \"/var/lib/elasticsearch/data\"\ndefault[:elasticsearch][:dir][:work]    = \"/var/lib/elasticsearch/work\"\ndefault[:elasticsearch][:dir][:gateway] = \"/var/lib/elasticsearch/gateway\"\n\n= LICENSE and AUTHOR:\n\nAuthor:: Grant Rodgers (<grant@gotime.com>)\n         Modified for PGI by Harlan Barnes (<harlan.barnes@pgi.com>)\n\nCopyright:: 2010, GoTime Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n",
+  "maintainer": "Harlan Barnes",
+  "maintainer_email": "harlan.barnes@pgi.com",
+  "license": "Apache",
+  "platforms": {
+  },
+  "dependencies": {
+    "java": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.1"
+}

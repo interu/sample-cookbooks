@@ -1,0 +1,22 @@
+path:
+  data: <%= @node[:elasticsearch][:dir][:data] %>
+  work: <%= @node[:elasticsearch][:dir][:work] %>
+  logs: <%= @node[:elasticsearch][:dir][:logs] %>
+
+cluster:
+  name: <%= @node[:elasticsearch][:cluster_name] %>
+
+gateway:
+  type: fs
+  fs:
+    location: <%= @node[:elasticsearch][:dir][:gateway] %>
+
+index:
+  number_of_shards: <%= @node[:elasticsearch][:default_shards] %>
+  number_of_replicas: <%= @node[:elasticsearch][:default_replicas] %>
+
+discovery:
+    zen.ping.multicast.enabled: false
+    zen.ping.unicast.hosts: <%= @node[:fqdn] %>
+network:
+    host: <%= @node[:elasticsearch][:network][:host] %>
