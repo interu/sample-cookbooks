@@ -32,25 +32,25 @@ end
 
 # Create ES directories
 #
-[ node.elasticsearch[:path][:conf], node.elasticsearch[:path][:logs], node.elasticsearch[:pid_path] ].each do |path|
-  directory path do
-    owner node.elasticsearch[:user] and group node.elasticsearch[:user] and mode 0755
-    recursive true
-    action :create
-  end
-end
+#[ node.elasticsearch[:path][:conf], node.elasticsearch[:path][:logs], node.elasticsearch[:pid_path] ].each do |path|
+#  directory path do
+#    owner node.elasticsearch[:user] and group node.elasticsearch[:user] and mode 0755
+#    recursive true
+#    action :create
+#  end
+#end
 
 # Create data path directories
 #
-data_paths = node.elasticsearch[:path][:data].is_a?(Array) ? node.elasticsearch[:path][:data] : node.elasticsearch[:path][:data].split(',')
-
-data_paths.each do |path|
-  directory path.strip do
-    owner node.elasticsearch[:user] and group node.elasticsearch[:user] and mode 0755
-    recursive true
-    action :create
-  end
-end
+#data_paths = node.elasticsearch[:path][:data].is_a?(Array) ? node.elasticsearch[:path][:data] : node.elasticsearch[:path][:data].split(',')
+#
+#data_paths.each do |path|
+#  directory path.strip do
+#    owner node.elasticsearch[:user] and group node.elasticsearch[:user] and mode 0755
+#    recursive true
+#    action :create
+#  end
+#end
 
 # Create service
 #
