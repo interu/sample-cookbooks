@@ -6,7 +6,7 @@
 elasticsearch = "elasticsearch-#{node.elasticsearch[:version]}"
 
 include_recipe "elasticsearch::curl"
-include_recipe "ark"
+#include_recipe "ark"
 
 # Create user and group
 #
@@ -66,17 +66,17 @@ end
 
 # Download, extract, symlink the elasticsearch libraries and binaries
 #
-ark "elasticsearch" do
-  url   node.elasticsearch[:download_url]
-  owner node.elasticsearch[:user]
-  group node.elasticsearch[:user]
-  version node.elasticsearch[:version]
-  has_binaries ['bin/elasticsearch', 'bin/plugin']
+#ark "elasticsearch" do
+#  url   node.elasticsearch[:download_url]
+#  owner node.elasticsearch[:user]
+#  group node.elasticsearch[:user]
+#  version node.elasticsearch[:version]
+#  has_binaries ['bin/elasticsearch', 'bin/plugin']
 #  checksum node.elasticsearch[:checksum]
 
 #  notifies :start,   'service[elasticsearch]'
 #  notifies :restart, 'service[elasticsearch]'
-end
+#end
 
 # Increase open file limits
 #
