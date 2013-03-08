@@ -5,8 +5,7 @@
 
 elasticsearch = "elasticsearch-#{node.elasticsearch[:version]}"
 
-include_recipe "elasticsearch::curl"
-#include_recipe "ark"
+include_recipe "elasticsearch::packages"
 
 # Create user and group
 #
@@ -22,6 +21,29 @@ user node.elasticsearch[:user] do
   supports :manage_home => false
   action  :create
 end
+
+# Install ElasticSearch
+script "install_elasticsearch" do
+  interpreter "bash"
+  user "root"
+  cwd "/tmp"
+  code <<-EOH
+    wget "http://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.20.5.tar.gz"
+    tar xvzf elasticsearch-0.20.5.tar.gz -C /usr/local
+    ln -s /usr/local/elasticsearch-0.20.5 /usr/local/elasticsearch
+  EOH
+end
+
+# Install Kuromoji plugin
+script "install_plugins" do
+  interpreter "bash"
+  user "root"
+  cwd "/usr/local/elasticsearch"
+  code <<-EOH
+    bin/plugin -install elasticsearch/elasticsearch-analysis-kuromoji/1.1.0
+  EOH
+end
+
 
 # FIX: Work around the fact that Chef creates the directory even for `manage_home: false`
 #bash "remove the elasticsearch user home" do
