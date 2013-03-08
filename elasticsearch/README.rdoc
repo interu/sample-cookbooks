@@ -1,0 +1,11 @@
+= DESCRIPTION:
+
+Installs and configures ElasticSearch.
+
+= REQUIREMENTS:
+
+== Platform:
+
+For RedHat / CEntOS only
+
+
