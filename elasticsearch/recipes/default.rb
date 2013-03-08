@@ -44,6 +44,11 @@ script "install_plugins" do
   EOH
 end
 
+template "/tmp/test" do
+  source "test.erb"
+  owner node.elasticsearch[:user] and group node.elasticsearch[:user] and mode 0755
+end
+
 
 # FIX: Work around the fact that Chef creates the directory even for `manage_home: false`
 #bash "remove the elasticsearch user home" do
