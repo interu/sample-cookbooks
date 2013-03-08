@@ -5,7 +5,7 @@
 
 elasticsearch = "elasticsearch-#{node.elasticsearch[:version]}"
 
-include_recipe "estest::curl"
+include_recipe "elasticsearch::curl"
 include_recipe "ark"
 
 # Create user and group
